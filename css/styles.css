@@ -1,0 +1,560 @@
+/* =========================================================
+   R-ONE VIDÉASTE — styles.css
+   Organisation simple + facile à maintenir
+   ========================================================= */
+
+/* =========================================================
+   1) Variables (thème)
+   ========================================================= */
+:root{
+  --bg:#070a12;
+
+  --overlay1:rgba(7,10,18,.72);
+  --overlay2:rgba(7,10,18,.90);
+
+  --panel:rgba(12,16,28,.72);
+  --panel2:rgba(12,16,28,.60);
+
+  --text:#edf2ff;
+  --muted:#a8b0c5;
+  --line:rgba(255,255,255,.10);
+
+  --accent:#ef4444;
+  --accent2:#60a5fa;
+
+  --radius:18px;
+  --shadow:0 18px 50px rgba(0,0,0,.55);
+
+  --max:1120px;
+}
+
+/* =========================================================
+   2) Reset / Base
+   ========================================================= */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+html{ color-scheme: dark; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+a{ color:inherit; }
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:24px 16px 70px;
+}
+
+/* =========================================================
+   3) Background (image + overlay)
+   ========================================================= */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:url("../assets/hero.webp") center/cover no-repeat;
+  transform: translateZ(0);
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(900px 560px at 15% 12%, rgba(96,165,250,.18), transparent 60%),
+    radial-gradient(900px 560px at 85% 20%, rgba(239,68,68,.14), transparent 60%),
+    linear-gradient(to bottom, var(--overlay1), var(--overlay2));
+}
+
+/* =========================================================
+   4) Accessibilité
+   ========================================================= */
+.skip-link{
+  position:absolute;
+  left:12px;
+  top:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  background: rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.22);
+  color: var(--text);
+  text-decoration:none;
+  transform: translateY(-140%);
+  transition: transform .2s ease;
+}
+.skip-link:focus{
+  transform: translateY(0);
+  outline:3px solid rgba(96,165,250,.55);
+  outline-offset:3px;
+}
+
+/* =========================================================
+   5) Header + Navigation
+   ========================================================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(to bottom, rgba(7,10,18,.78), rgba(7,10,18,.35));
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+/* Brand (logo + baseline) */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  min-width: 220px;
+}
+
+/* Logo: plus gros, sans cadre rouge */
+.brand img{
+  width:92px;
+  height:92px;
+  border-radius:999px;
+  display:block;
+  border:none;
+  box-shadow: 0 18px 45px rgba(0,0,0,.55);
+  background: rgba(255,255,255,.03); /* utile si le png/webp a de la transparence */
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.brand:hover img{
+  transform: scale(1.06);
+  box-shadow: 0 22px 55px rgba(0,0,0,.65);
+  filter: saturate(1.08) contrast(1.05);
+}
+
+/* Texte brand */
+.brand strong{
+  display:block;
+  font-size:14px;
+  letter-spacing:.2px;
+}
+.brand span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+/* Navigation */
+.nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:13px;
+  padding:8px 10px;
+  border-radius:12px;
+}
+.nav a:hover{
+  color:var(--text);
+  background:rgba(255,255,255,.06);
+}
+
+/* Actif via aria-current */
+.nav a[aria-current="page"]{
+  color:var(--text);
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+/* Actif via JS (.active) */
+.nav a.active{
+  color:var(--text);
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+/* =========================================================
+   6) Boutons
+   ========================================================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:650;
+  font-size:13px;
+  white-space:nowrap;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  cursor:pointer;
+}
+.btn:hover{ background: rgba(255,255,255,.10); }
+.btn:focus-visible{ outline:3px solid rgba(96,165,250,.55); outline-offset:3px; }
+
+.btn.primary{
+  border-color: rgba(239,68,68,.55);
+  background: linear-gradient(135deg, rgba(239,68,68,.95), rgba(96,165,250,.72));
+}
+
+/* =========================================================
+   7) Blocs / Layout
+   ========================================================= */
+.panel{
+  background: var(--panel);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.pad{ padding:18px; }
+
+.hero{
+  padding:26px 0 10px;
+  display:grid;
+  gap:16px;
+  grid-template-columns: 1.25fr .75fr;
+  align-items:stretch;
+}
+@media (max-width: 920px){
+  .hero{ grid-template-columns:1fr; }
+}
+
+/* =========================================================
+   8) Typo
+   ========================================================= */
+h1{
+  margin:12px 0 10px;
+  font-size:44px;
+  line-height:1.08;
+  letter-spacing:-.9px;
+}
+@media (max-width: 520px){ h1{ font-size:36px; } }
+
+h2{ font-size:22px; margin:18px 0 12px; }
+h3{ margin:0 0 8px; font-size:16px; }
+
+p{ margin:0; }
+.lead{ color:var(--muted); font-size:16px; margin:0 0 10px; }
+.muted{ color:var(--muted); }
+
+/* =========================================================
+   9) Composants
+   ========================================================= */
+.kicker{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--muted);
+  width: fit-content;
+  font-size:12px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:#22c55e;
+  box-shadow: 0 0 0 4px rgba(34,197,94,.18);
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.card{
+  background: var(--panel2);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:16px;
+}
+
+.list{
+  margin:10px 0 0;
+  padding:0 0 0 18px;
+  color:var(--muted);
+}
+.list li{ margin:6px 0; }
+
+/* =========================================================
+   10) Formulaires
+   ========================================================= */
+label{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin:10px 0 6px;
+}
+
+input, textarea{
+  width:100%;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding:12px 12px;
+  color:var(--text);
+  font-size:14px;
+  outline:none;
+}
+textarea{ min-height:120px; resize:vertical; }
+
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid rgba(96,165,250,.55);
+  outline-offset:2px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+@media (max-width: 620px){
+  .form-row{ grid-template-columns:1fr; }
+}
+
+.note{ font-size:12px; color:var(--muted); margin-top:10px; }
+
+/* =========================================================
+   11) Index spécifiques
+   ========================================================= */
+.about-text{
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.works-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-height: 440px;
+  overflow:auto;
+  padding-right:6px;
+  scrollbar-gutter: stable;
+}
+
+.after-wide{ margin-top: 18px; }
+
+/* Tabs (intercalaires) */
+.tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.tab-panels[hidden]{ display:none; }
+
+/* =========================================================
+   12) Footer (base)
+   ========================================================= */
+.footer{
+  margin-top:26px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.social{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.social a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:6px 10px;
+  border-radius:12px;
+}
+.social a:hover{ color:var(--text); background:rgba(255,255,255,.06); }
+
+/* Footer "pro" (si tu utilises les classes) */
+.footer-pro{
+  align-items:flex-start;
+  gap:16px;
+}
+.footer-left{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width: 240px;
+}
+.footer-line{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+}
+.footer-line .sep{ opacity:.55; }
+
+.footer-link{
+  color: var(--muted);
+  text-decoration:none;
+}
+.footer-link:hover{
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-mail{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: var(--muted);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:12px;
+  width: fit-content;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.footer-mail:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.07);
+}
+.icon-mail{ opacity:.9; }
+
+.footer-right{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  margin-left:auto;
+}
+
+/* Réseaux en couleurs */
+.social-icon{
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  text-decoration:none;
+  transition: transform .12s ease, background .12s ease;
+}
+.social-icon:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.08);
+}
+.social-icon svg{ display:block; }
+.social-icon.facebook{ color:#1877F2; }
+.social-icon.instagram{ color:#E4405F; }
+.social-icon.linkedin{ color:#0A66C2; }
+.social-icon.youtube{ color:#FF0000; }
+
+/* =========================================================
+   13) Responsive (tablet / mobile)
+   ========================================================= */
+@media (max-width: 980px){
+  .container{ padding:22px 14px 64px; }
+
+  .header-inner{
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .nav{
+    order: 3;
+    width: 100%;
+    justify-content:flex-start;
+  }
+
+  .btn{ padding:10px 12px; }
+  .pad{ padding:16px; }
+  h1{ font-size:40px; }
+}
+
+@media (max-width: 620px){
+  .container{ padding:18px 12px 58px; }
+
+  .brand{ min-width:0; }
+  .brand img{
+    width:72px;
+    height:72px;
+    border-radius:999px;
+  }
+  .brand span{ font-size:11px; }
+
+  .header-inner{ padding:12px 12px; }
+
+  .nav a{
+    font-size:13px;
+    padding:10px 10px;
+  }
+
+  .btn{
+    font-size:13px;
+    padding:10px 12px;
+    border-radius:14px;
+  }
+
+  .pad{ padding:14px; }
+  h1{ font-size:32px; letter-spacing:-.6px; }
+  .lead{ font-size:15px; }
+
+  .actions{ gap:8px; }
+  .footer{ gap:10px; }
+}
+
+@media (max-width: 360px){
+  h1{ font-size:28px; }
+  .nav{ gap:6px; }
+  .nav a{ padding:9px 9px; }
+}
+
+@media (max-width: 720px){
+  .footer-pro{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-right{
+    margin-left:0;
+    justify-content:flex-start;
+  }
+}
+
+/* =========================================================
+   14) Réduction des animations
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior:auto !important; }
+}

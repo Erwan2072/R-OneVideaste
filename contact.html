@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — R-One Vidéaste</title>
+  <meta name="description" content="Contact et devis : R-One Vidéaste près de Rennes. Email + réseaux." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="contact.html" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" as="image" href="assets/hero.webp" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-rone.webp" width="44" height="44" alt="Logo R-One Vidéaste" loading="eager" decoding="async" />
+        <div>
+          <strong><span style="color:var(--accent)">R-</span>One <span style="letter-spacing:.6px">VIDÉASTE</span></strong>
+          <span>Vidéaste • Montage • Rennes</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <a class="btn primary" href="contact.html">Demander un devis</a>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="panel pad">
+      <h1 style="margin-top:0">Contact</h1>
+      <p class="lead">Dis-moi ton besoin (date, lieu, type de vidéo). Je réponds vite.</p>
+
+      <div class="split">
+        <div class="card">
+          <h2 style="margin:0 0 10px">Email</h2>
+          <p class="muted"><a href="mailto:rone.sonsvideos@gmail.com">rone.sonsvideos@gmail.com</a></p>
+
+          <h2 style="margin:18px 0 10px">Message</h2>
+          <form action="mailto:rone.sonsvideos@gmail.com" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div>
+                <label for="name">Nom</label>
+                <input id="name" name="Nom" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <label for="subject">Sujet</label>
+            <input id="subject" name="Sujet" placeholder="Tournage / Montage / Réseaux…" />
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="Message" placeholder="Décris ton besoin : date, lieu, durée, objectif, style souhaité."></textarea>
+
+            <div class="actions" style="margin-top:12px">
+              <button class="btn primary" type="submit">Envoyer</button>
+              <a class="btn" href="realisations.html">Voir les réalisations</a>
+            </div>
+
+            <p class="note">Plus tard, si tu veux un formulaire “pro” sans mailto : on branchera un service léger.</p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:0 0 10px">Réseaux</h2>
+          <div class="social" aria-label="Réseaux sociaux">
+            <a href="https://www.facebook.com/R.Onevideaste" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/rone_videaste" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/r-one-vid%C3%A9aste" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.youtube.com/@r-onevideaste5682" target="_blank" rel="noopener">YouTube</a>
+          </div>
+
+          <h2 style="margin:18px 0 10px">Zone</h2>
+          <p class="muted">Rennes • Bretagne • Déplacements possibles</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> R-One Vidéaste</div>
+      <div class="social">
+        <a href="index.html">Retour accueil</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
