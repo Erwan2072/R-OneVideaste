@@ -563,49 +563,66 @@ textarea:focus-visible{
 /* =========================================================
    MATÉRIEL — Cards fiche produit (image à gauche)
    ========================================================= */
-
-[data-tabs="materiel"] .grid3{
-  grid-template-columns: 1fr; /* une fiche par ligne */
-  gap:16px;
+   /* Card image blanche */
+[data-tabs="materiel"] .card-image{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Card = layout horizontal */
-[data-tabs="materiel"] .card{
-  display:grid;
-  grid-template-columns: 260px 1fr; /* image | texte */
-  gap:16px;
-  align-items:center;
-  padding:16px;
-  background: rgba(12,16,28,.60);
+/* Image propre */
+[data-tabs="materiel"] .card-image img{
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
 }
 
-/* Zone image */
-[data-tabs="materiel"] .card > img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-  background: rgba(0,0,0,.30);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:14px;
-  display:block;
-}
+    [data-tabs="materiel"] .grid3{
+      grid-template-columns: 1fr; /* une fiche par ligne */
+      gap:16px;
+    }
 
-/* Texte */
-[data-tabs="materiel"] .card > strong{
-  font-size:16px;
-  line-height:1.25;
-}
+    /* Card = layout horizontal */
+    [data-tabs="materiel"] .card{
+      display:grid;
+      grid-template-columns: 260px 1fr; /* image | texte */
+      gap:16px;
+      align-items:center;
+      padding:16px;
+      background: rgba(12,16,28,.60);
+    }
 
-[data-tabs="materiel"] .card > p.muted{
-  margin-top:2px;
-}
+    /* Zone image */
+    [data-tabs="materiel"] .card > img{
+      width:100%;
+      height:220px;
+      object-fit:contain;
+      background: rgba(0,0,0,.30);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      display:block;
+    }
 
-/* Liste compacte */
-[data-tabs="materiel"] .card .list{
-  margin:6px 0 0;
-  padding-left:18px;
-}
+    /* Texte */
+    [data-tabs="materiel"] .card > strong{
+      font-size:16px;
+      line-height:1.25;
+    }
+
+    [data-tabs="materiel"] .card > p.muted{
+      margin-top:2px;
+    }
+
+    /* Liste compacte */
+    [data-tabs="materiel"] .card .list{
+      margin:6px 0 0;
+      padding-left:18px;
+    }
 
 /* =========================
    RESPONSIVE
