@@ -92,7 +92,11 @@ body::after{
     linear-gradient(to bottom, var(--overlay1), var(--overlay2));
 }
 
-
+.brand span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
 /* ========================================================= */
 /* 4) ACCESSIBILITÉ                                          */
