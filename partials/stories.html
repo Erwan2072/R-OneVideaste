@@ -1,46 +1,256 @@
-<section class="panel pad after-wide" aria-labelledby="stories-title">
-  <h2 id="stories-title">Histoires en images</h2>
-
-  <p class="muted" style="margin-bottom:14px">
-    Des images prises sur le terrain, avec le contexte et l’instant qu’elles racontent.
-  </p>
-
-  <!-- STORY CARD -->
-  <article class="card story">
-    <div class="story-media">
-      <img
-        src="assets/photos/P1000078.webp"
-        alt="Scène maritime aux Sables-d’Olonne, mer calme et rochers"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
-
-    <div class="story-body">
-      <h3>Un instant précis</h3>
-
-      <p class="muted">
-        Cette photo a été prise sur la côte, face à l’océan, à un moment où tout s’est aligné.
-        La lumière est claire, l’horizon bien dessiné, la mer calme.
-      </p>
-
-      <p class="muted">
-        Deux mouettes apparaissent dans le cadre :
-        l’une posée sur les rochers, immobile, l’autre en plein vol, parfaitement nette.
-        La scène n’a duré qu’une fraction de seconde..
-      </p>
-
-      <p class="muted">
-        Ce qui rend cette image intéressante, c’est l’équilibre entre les éléments :
-        le mouvement et l’immobilité, le ciel, la mer et la roche, le vivant dans un décor naturel simple.
-      </p>
-
-      <p class="muted">
-        Rien n’est mis en scène.
-        C’est une image prise sur le moment, en observant, en attendant le bon timing.
-        Le déclenchement se fait exactement quand le sujet principal entre dans le cadre, avec une composition lisible et une lumière propre.
+<section class="panel pad after-wide stories-book" aria-labelledby="stories-title">
+  <div class="stories-head" style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
+    <div>
+      <h2 id="stories-title">Histoires en images</h2>
+      <p class="muted story-intro">
+        Des lieux, des ambiances et des instants que j’ai eu envie de raconter autrement, à travers l’image.
       </p>
     </div>
-  </article>
 
+    <div class="stories-nav" aria-label="Navigation des histoires" style="display:flex;gap:10px;">
+      <button class="story-arrow" type="button" id="story-prev" aria-label="Histoire précédente"
+        style="width:44px;height:44px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-size:1.2rem;cursor:pointer;">
+        &#10094;
+      </button>
+      <button class="story-arrow" type="button" id="story-next" aria-label="Histoire suivante"
+        style="width:44px;height:44px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-size:1.2rem;cursor:pointer;">
+        &#10095;
+      </button>
+    </div>
+  </div>
+
+  <div class="story-book-frame">
+
+    <!-- STORY 1 -->
+    <article class="card story-page is-active" style="display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/5.webp"
+          alt="Chapelle Saint-Barbe dans une ambiance brumeuse"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">01 / 06</p>
+        <h3 style="margin:0 0 14px;">La chapelle Saint-Barbe</h3>
+
+        <p class="muted">
+          Cette image, je l’ai prise dans une atmosphère très particulière, presque suspendue.
+          La brume enveloppait tout le paysage et donnait à la chapelle Saint-Barbe un aspect silencieux, presque irréel.
+        </p>
+
+        <p class="muted">
+          Ce que j’ai aimé ici, ce n’est pas seulement l’architecture du lieu, mais surtout l’ambiance qu’il dégageait ce jour-là.
+          Les pierres, les escaliers, les balustrades et cette lumière très douce donnaient l’impression d’être hors du temps.
+        </p>
+
+        <p class="muted">
+          J’ai cherché à garder dans cette photo ce sentiment de calme et de mystère.
+          Rien ne bouge vraiment, tout semble figé, et pourtant l’image raconte quelque chose.
+        </p>
+
+        <p class="muted">
+          Pour moi, ce genre de photo fonctionne quand elle ne montre pas seulement un lieu,
+          mais aussi l’émotion du moment où je l’ai découvert.
+        </p>
+      </div>
+    </article>
+
+    <!-- STORY 2 -->
+    <article class="card story-page" style="display:none;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/1.webp"
+          alt="Château de Trécesson reflété dans l'eau"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">02 / 06</p>
+        <h3 style="margin:0 0 14px;">Le château de Trécesson</h3>
+
+        <p class="muted">
+          Cette photo du château de Trécesson, je l’ai prise avec l’envie de capter toute la force du lieu,
+          mais aussi son équilibre. Le reflet dans l’eau apporte immédiatement quelque chose de plus à l’image.
+        </p>
+
+        <p class="muted">
+          Ce que j’ai trouvé intéressant ici, c’est le contraste entre la solidité du château,
+          très ancré dans le paysage, et la douceur du ciel qui vient presque alléger toute la scène.
+        </p>
+
+        <p class="muted">
+          J’aime quand une photo permet de redonner de la présence à un endroit connu,
+          sans en faire trop. Ici, le décor se suffit à lui-même : l’architecture, l’eau, la lumière,
+          les nuages… tout était déjà là.
+        </p>
+
+        <p class="muted">
+          Mon rôle, à ce moment-là, a surtout été d’attendre le bon cadrage pour que l’ensemble reste lisible,
+          propre, et que l’image garde ce côté majestueux sans perdre sa simplicité.
+        </p>
+      </div>
+    </article>
+
+    <!-- STORY 3 -->
+    <article class="card story-page" style="display:none;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/2.webp"
+          alt="Ruines de la chapelle de Languidou éclairées par le soleil"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">03 / 06</p>
+        <h3 style="margin:0 0 14px;">La chapelle de Languidou</h3>
+
+        <p class="muted">
+          Cette photo a été prise à la chapelle de Languidou, un lieu qui attire tout de suite le regard
+          par ses lignes de pierre et son ouverture sur le ciel.
+        </p>
+
+        <p class="muted">
+          Ce que j’ai voulu capter ici, c’est la rencontre entre la ruine et la lumière.
+          Le soleil qui passe à travers la pierre donne à l’image une dimension plus vivante,
+          presque symbolique.
+        </p>
+
+        <p class="muted">
+          J’aime beaucoup photographier ce type d’endroit, parce qu’il y a toujours quelque chose à raconter :
+          le temps qui passe, ce qu’il reste, ce qui a disparu, et ce que la lumière vient encore révéler.
+        </p>
+
+        <p class="muted">
+          Dans cette image, je n’ai pas cherché à surcharger la composition.
+          Je voulais simplement laisser parler la structure, l’ouverture et cette lumière qui venait exactement au bon endroit.
+        </p>
+      </div>
+    </article>
+
+    <!-- STORY 4 -->
+    <article class="card story-page" style="display:none;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/3.webp"
+          alt="Plage sur l'île de Bréhat avec eau turquoise et ciel nuageux"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">04 / 06</p>
+        <h3 style="margin:0 0 14px;">Une plage sur l’île de Bréhat</h3>
+
+        <p class="muted">
+          Cette image a été prise sur l’île de Bréhat, dans un moment où la lumière changeait sans arrêt.
+          Le ciel était chargé, mais l’eau gardait des teintes très claires, presque irréelles.
+        </p>
+
+        <p class="muted">
+          Ce que j’aime dans cette photo, c’est justement ce contraste :
+          quelque chose de calme dans le paysage, mais une tension visible dans le ciel.
+        </p>
+
+        <p class="muted">
+          Le décor était déjà très fort naturellement, avec cette étendue d’eau, les rochers,
+          les petites constructions au loin et les nuances entre le sable, le bleu et le gris.
+        </p>
+
+        <p class="muted">
+          J’ai voulu conserver cette impression d’espace et de respiration,
+          comme si l’image laissait le regard circuler librement d’un bout à l’autre du cadre.
+        </p>
+      </div>
+    </article>
+
+    <!-- STORY 5 -->
+    <article class="card story-page" style="display:none;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/4.webp"
+          alt="Fort La Latte au bord de la mer"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">05 / 06</p>
+        <h3 style="margin:0 0 14px;">Le Fort La Latte</h3>
+
+        <p class="muted">
+          Le Fort La Latte est un lieu qui impressionne immédiatement par sa position.
+          Accroché à la côte, face à la mer, il dégage une vraie force visuelle.
+        </p>
+
+        <p class="muted">
+          Quand j’ai pris cette photo, ce qui m’intéressait, c’était de montrer à la fois
+          la construction elle-même et son rapport au vide autour d’elle :
+          la falaise, l’horizon, la mer, l’espace.
+        </p>
+
+        <p class="muted">
+          Ce type de lieu raconte déjà une histoire à lui tout seul.
+          Mon objectif était simplement de lui laisser cette place, sans casser l’équilibre de la scène.
+        </p>
+
+        <p class="muted">
+          J’aime beaucoup ce genre d’image, parce qu’elle mêle patrimoine, paysage et sensation de grandeur,
+          tout en restant très lisible visuellement.
+        </p>
+      </div>
+    </article>
+
+    <!-- STORY 6 -->
+    <article class="card story-page" style="display:none;grid-template-columns:minmax(280px,420px) 1fr;gap:24px;align-items:center;">
+      <div class="story-page-media" style="overflow:hidden;border-radius:16px;">
+        <img
+          src="assets/photos/6.webp"
+          alt="Abbaye de Beauport vue de l'intérieur"
+          loading="lazy"
+          decoding="async"
+          style="width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;"
+        >
+      </div>
+
+      <div class="story-page-body" style="text-align:justify; text-justify:inter-word; hyphens:auto;">
+        <p class="story-counter" style="margin:0 0 10px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);">06 / 06</p>
+        <h3 style="margin:0 0 14px;">L’abbaye de Beauport</h3>
+
+        <p class="muted">
+          Cette photo de l’abbaye de Beauport, je l’ai pensée comme une image de profondeur.
+          Les arches, les lignes et l’ouverture au fond guident naturellement le regard.
+        </p>
+
+        <p class="muted">
+          Ce qui me plaît ici, c’est le mélange entre la puissance des murs,
+          le détail des pierres, et la vie qui reprend doucement sa place avec la végétation.
+        </p>
+
+        <p class="muted">
+          C’est un lieu qui impose le respect, mais qui garde aussi une vraie poésie visuelle.
+          On sent le passé, mais on sent aussi que le lieu continue de vivre autrement.
+        </p>
+
+        <p class="muted">
+          Dans cette image, j’ai surtout voulu garder cette sensation d’immersion,
+          comme si l’on entrait soi-même dans l’histoire en avançant dans le cadre.
+        </p>
+      </div>
+    </article>
+
+  </div>
 </section>
