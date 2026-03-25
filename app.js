@@ -140,7 +140,7 @@
 
   function showStory(index) {
     pages.forEach((page, i) => {
-      page.style.display = i === index ? "grid" : "none";
+      page.style.display = i === index ? "flex" : "none";
       page.classList.toggle("is-active", i === index);
     });
   }
